@@ -29,26 +29,26 @@ namespace LeastSquareMethodApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.grParameters = new System.Windows.Forms.GroupBox();
+            this.cbPhi2 = new System.Windows.Forms.ComboBox();
+            this.cbPhi1 = new System.Windows.Forms.ComboBox();
             this.ExpNumCount = new System.Windows.Forms.NumericUpDown();
             this.lbCounter = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbPhi1 = new System.Windows.Forms.Label();
             this.grExpData = new System.Windows.Forms.GroupBox();
             this.dataX = new System.Windows.Forms.DataGridView();
+            this.ExpNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChartOfFunction = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grMode = new System.Windows.Forms.GroupBox();
             this.rbModeDefine = new System.Windows.Forms.RadioButton();
-            this.cbPhi1 = new System.Windows.Forms.ComboBox();
-            this.cbPhi2 = new System.Windows.Forms.ComboBox();
             this.grCoff = new System.Windows.Forms.GroupBox();
+            this.tbCoff = new System.Windows.Forms.TextBox();
             this.lbA = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSolution = new System.Windows.Forms.Button();
-            this.ExpNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grParameters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExpNumCount)).BeginInit();
             this.grExpData.SuspendLayout();
@@ -75,6 +75,33 @@ namespace LeastSquareMethodApp
             this.grParameters.TabIndex = 0;
             this.grParameters.TabStop = false;
             this.grParameters.Text = "Параметры";
+            // 
+            // cbPhi2
+            // 
+            this.cbPhi2.FormattingEnabled = true;
+            this.cbPhi2.Items.AddRange(new object[] {
+            "ln⁡x",
+            "cos⁡x",
+            "1/x",
+            "x",
+            "x^2"});
+            this.cbPhi2.Location = new System.Drawing.Point(76, 81);
+            this.cbPhi2.Name = "cbPhi2";
+            this.cbPhi2.Size = new System.Drawing.Size(121, 24);
+            this.cbPhi2.TabIndex = 7;
+            // 
+            // cbPhi1
+            // 
+            this.cbPhi1.FormattingEnabled = true;
+            this.cbPhi1.Items.AddRange(new object[] {
+            "√x",
+            "x^2",
+            "x",
+            "sin ⁡x"});
+            this.cbPhi1.Location = new System.Drawing.Point(76, 42);
+            this.cbPhi1.Name = "cbPhi1";
+            this.cbPhi1.Size = new System.Drawing.Size(121, 24);
+            this.cbPhi1.TabIndex = 6;
             // 
             // ExpNumCount
             // 
@@ -147,23 +174,31 @@ namespace LeastSquareMethodApp
             this.dataX.Size = new System.Drawing.Size(378, 78);
             this.dataX.TabIndex = 0;
             // 
+            // ExpNum
+            // 
+            this.ExpNum.Frozen = true;
+            this.ExpNum.HeaderText = "i";
+            this.ExpNum.Name = "ExpNum";
+            this.ExpNum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ExpNum.ToolTipText = "i-е значение";
+            this.ExpNum.Width = 25;
+            // 
             // ChartOfFunction
             // 
-            this.ChartOfFunction.BorderlineColor = System.Drawing.Color.WhiteSmoke;
-            chartArea2.Name = "ChartArea1";
-            this.ChartOfFunction.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.ChartOfFunction.Legends.Add(legend2);
+            this.ChartOfFunction.BorderlineColor = System.Drawing.SystemColors.Window;
+            chartArea1.Name = "ChartArea1";
+            this.ChartOfFunction.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ChartOfFunction.Legends.Add(legend1);
             this.ChartOfFunction.Location = new System.Drawing.Point(445, 26);
             this.ChartOfFunction.Name = "ChartOfFunction";
             this.ChartOfFunction.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.ChartOfFunction.Series.Add(series2);
-            this.ChartOfFunction.Size = new System.Drawing.Size(379, 327);
+            this.ChartOfFunction.Size = new System.Drawing.Size(380, 330);
             this.ChartOfFunction.TabIndex = 2;
-            this.ChartOfFunction.Text = "chart1";
+            this.ChartOfFunction.Text = "График ";
+            title1.Name = "titleOfChart";
+            title1.Text = "Аппроксимация функции МНК";
+            this.ChartOfFunction.Titles.Add(title1);
             // 
             // grMode
             // 
@@ -188,36 +223,9 @@ namespace LeastSquareMethodApp
             this.rbModeDefine.UseCompatibleTextRendering = true;
             this.rbModeDefine.UseVisualStyleBackColor = true;
             // 
-            // cbPhi1
-            // 
-            this.cbPhi1.FormattingEnabled = true;
-            this.cbPhi1.Items.AddRange(new object[] {
-            "√x",
-            "x^2",
-            "x",
-            "sin ⁡x"});
-            this.cbPhi1.Location = new System.Drawing.Point(76, 42);
-            this.cbPhi1.Name = "cbPhi1";
-            this.cbPhi1.Size = new System.Drawing.Size(121, 24);
-            this.cbPhi1.TabIndex = 6;
-            // 
-            // cbPhi2
-            // 
-            this.cbPhi2.FormattingEnabled = true;
-            this.cbPhi2.Items.AddRange(new object[] {
-            "ln⁡x",
-            "cos⁡x",
-            "1/x",
-            "x",
-            "x^2"});
-            this.cbPhi2.Location = new System.Drawing.Point(76, 81);
-            this.cbPhi2.Name = "cbPhi2";
-            this.cbPhi2.Size = new System.Drawing.Size(121, 24);
-            this.cbPhi2.TabIndex = 7;
-            // 
             // grCoff
             // 
-            this.grCoff.Controls.Add(this.textBox1);
+            this.grCoff.Controls.Add(this.tbCoff);
             this.grCoff.Controls.Add(this.lbA);
             this.grCoff.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.grCoff.Location = new System.Drawing.Point(445, 377);
@@ -227,6 +235,13 @@ namespace LeastSquareMethodApp
             this.grCoff.TabStop = false;
             this.grCoff.Text = "Коэффициенты";
             // 
+            // tbCoff
+            // 
+            this.tbCoff.Location = new System.Drawing.Point(80, 41);
+            this.tbCoff.Name = "tbCoff";
+            this.tbCoff.Size = new System.Drawing.Size(293, 22);
+            this.tbCoff.TabIndex = 1;
+            // 
             // lbA
             // 
             this.lbA.AutoSize = true;
@@ -235,13 +250,6 @@ namespace LeastSquareMethodApp
             this.lbA.Size = new System.Drawing.Size(67, 16);
             this.lbA.TabIndex = 0;
             this.lbA.Text = "a0, a1, a2";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(80, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 22);
-            this.textBox1.TabIndex = 1;
             // 
             // btnSolution
             // 
@@ -254,15 +262,6 @@ namespace LeastSquareMethodApp
             this.btnSolution.Text = "Провести аппроксимацию";
             this.btnSolution.UseVisualStyleBackColor = false;
             this.btnSolution.Click += new System.EventHandler(this.btnSolution_Click);
-            // 
-            // ExpNum
-            // 
-            this.ExpNum.Frozen = true;
-            this.ExpNum.HeaderText = "i";
-            this.ExpNum.Name = "ExpNum";
-            this.ExpNum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ExpNum.ToolTipText = "i-е значение";
-            this.ExpNum.Width = 25;
             // 
             // frmLS
             // 
@@ -303,16 +302,16 @@ namespace LeastSquareMethodApp
         private System.Windows.Forms.Label lbCounter;
         private System.Windows.Forms.GroupBox grExpData;
         private System.Windows.Forms.DataGridView dataX;
-        private System.Windows.Forms.DataVisualization.Charting.Chart ChartOfFunction;
         private System.Windows.Forms.GroupBox grMode;
         private System.Windows.Forms.RadioButton rbModeDefine;
         private System.Windows.Forms.ComboBox cbPhi2;
         private System.Windows.Forms.ComboBox cbPhi1;
         private System.Windows.Forms.GroupBox grCoff;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbCoff;
         private System.Windows.Forms.Label lbA;
         private System.Windows.Forms.Button btnSolution;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExpNum;
+        public System.Windows.Forms.DataVisualization.Charting.Chart ChartOfFunction;
     }
 }
 

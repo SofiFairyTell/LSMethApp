@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace LeastSquareMethodApp
 {
@@ -73,8 +74,51 @@ namespace LeastSquareMethodApp
             phi2 = returnPhi(phiBox2, arrX);
             double a0, a1, a2 = 0.0;
             LeastSquares(arrX, arrY, phi1, phi2,out a0,out a1, out a2);
+            double[] appY = CountApprY(a0, a1, a2, phi1, phi2,arrX.Length);
+            //выводы на экран
+            string ResultA = String.Concat(a0.ToString(),";", a1.ToString(), ";", a2.ToString()) ;
+            tbCoff.Clear();
+            tbCoff.AppendText(ResultA);
+            DrawChart(arrX, arrY, appY);
         }
 
+
+        public void DrawChart(double[] X, double[] Y, double[] Y1)
+        {
+            
+            // Устанавливаем размеры и местоположение Chart
+            ChartOfFunction.Size= new Size(380, 330);
+            //ChartOfFunction.Location = new Point(10, 10);
+
+            // Создаем новую область Chart
+            ChartArea chartArea1 = new ChartArea();
+            ChartOfFunction.ChartAreas.Add(chartArea1);
+            
+            // Создаем новый объект Series для хранения точек графика
+            Series series1 = new Series();
+            Series series2 = new Series();
+            series1.ChartType = SeriesChartType.Point;          
+            series2.ChartType = SeriesChartType.Point;
+            series1.Color = Color.Red;
+            series2.Color = Color.Blue;
+            series1.LegendText = "Эксперименты";
+            series1.LegendText = "Результаты аппроксимации";
+            // Добавляем точки в Series
+            for (int i = 0; i < X.Length; i++)
+            {
+                series1.Points.AddXY(X[i], Y[i]);
+                series2.Points.AddXY(X[i], Y1[i]);
+            }          
+
+            if (ChartOfFunction.Series.Count>0)
+            {
+                ChartOfFunction.Series.Clear();
+            };
+
+            // Добавляем Series в Chart
+            ChartOfFunction.Series.Add(series1);
+            ChartOfFunction.Series.Add(series2);
+        }
         private double[] returnPhi(string PhiBox, double[] arX)
         {
             double[] phi = new double[arX.Length];
@@ -136,7 +180,7 @@ namespace LeastSquareMethodApp
             for (int i = 0; i < arX.Length; i++)
             {
                 //здесь должна быть обработка на <0 но мне лень
-                phi[i] = 1/arX[i];
+                phi[i] = 1.0/arX[i];
             }
             return phi;
         }
@@ -144,7 +188,15 @@ namespace LeastSquareMethodApp
         #endregion
 
 
-
+        private double[] CountApprY(double a0, double a1, double a2, double[] phi1, double[] phi2, int NumX)
+        {
+            double[] apprY = new double[NumX];
+            for(int i=0; i<NumX; i++)
+            {
+                apprY[i] = a0 + a1 * phi1[i] + a2 * phi2[i];
+            }
+            return apprY;
+        }
 
 
         // Метод наименьших квадратов для аппроксимации зависимой переменной y по двум функциям phi1(x) и phi2(x)
@@ -172,9 +224,9 @@ namespace LeastSquareMethodApp
             double[] a = MultiplyVector(invXtX, XtY);
 
             // Извлечение коэффициентов
-            a0 = a[0];
-            a1 = a[1];
-            a2 = a[2];
+            a0 = Math.Round(a[0], 2);
+            a1 = Math.Round(a[1], 2);
+            a2 = Math.Round(a[2], 2);
         }
 
         // Транспонирование матрицы
