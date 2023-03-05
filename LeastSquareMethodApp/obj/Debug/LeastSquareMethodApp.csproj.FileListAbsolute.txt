@@ -1,0 +1,10 @@
+C:\Users\SKurbatova\source\LSMethApp\LeastSquareMethodApp\bin\Debug\LeastSquareMethodApp.exe.config
+C:\Users\SKurbatova\source\LSMethApp\LeastSquareMethodApp\bin\Debug\LeastSquareMethodApp.exe
+C:\Users\SKurbatova\source\LSMethApp\LeastSquareMethodApp\bin\Debug\LeastSquareMethodApp.pdb
+C:\Users\SKurbatova\source\LSMethApp\LeastSquareMethodApp\obj\Debug\LeastSquareMethodApp.csproj.AssemblyReference.cache
+C:\Users\SKurbatova\source\LSMethApp\LeastSquareMethodApp\obj\Debug\LeastSquareMethodApp.frmLS.resources
+C:\Users\SKurbatova\source\LSMethApp\LeastSquareMethodApp\obj\Debug\LeastSquareMethodApp.Properties.Resources.resources
+C:\Users\SKurbatova\source\LSMethApp\LeastSquareMethodApp\obj\Debug\LeastSquareMethodApp.csproj.GenerateResource.cache
+C:\Users\SKurbatova\source\LSMethApp\LeastSquareMethodApp\obj\Debug\LeastSquareMethodApp.csproj.CoreCompileInputs.cache
+C:\Users\SKurbatova\source\LSMethApp\LeastSquareMethodApp\obj\Debug\LeastSquareMethodApp.exe
+C:\Users\SKurbatova\source\LSMethApp\LeastSquareMethodApp\obj\Debug\LeastSquareMethodApp.pdb
