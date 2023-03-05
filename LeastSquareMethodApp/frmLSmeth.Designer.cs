@@ -29,19 +29,16 @@ namespace LeastSquareMethodApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.grParameters = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.ExpNumCount = new System.Windows.Forms.NumericUpDown();
             this.lbCounter = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbPhi1 = new System.Windows.Forms.Label();
             this.grExpData = new System.Windows.Forms.GroupBox();
-            this.dataY = new System.Windows.Forms.DataGridView();
-            this.Yi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataX = new System.Windows.Forms.DataGridView();
-            this.Xi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChartOfFunction = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grMode = new System.Windows.Forms.GroupBox();
             this.rbModeDefine = new System.Windows.Forms.RadioButton();
@@ -50,10 +47,11 @@ namespace LeastSquareMethodApp
             this.grCoff = new System.Windows.Forms.GroupBox();
             this.lbA = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSolution = new System.Windows.Forms.Button();
+            this.ExpNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grParameters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExpNumCount)).BeginInit();
             this.grExpData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartOfFunction)).BeginInit();
             this.grMode.SuspendLayout();
@@ -64,36 +62,37 @@ namespace LeastSquareMethodApp
             // 
             this.grParameters.Controls.Add(this.comboBox2);
             this.grParameters.Controls.Add(this.comboBox1);
-            this.grParameters.Controls.Add(this.numericUpDown1);
+            this.grParameters.Controls.Add(this.ExpNumCount);
             this.grParameters.Controls.Add(this.lbCounter);
             this.grParameters.Controls.Add(this.label1);
             this.grParameters.Controls.Add(this.lbPhi1);
             this.grParameters.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.grParameters.Location = new System.Drawing.Point(27, 108);
+            this.grParameters.Location = new System.Drawing.Point(27, 90);
             this.grParameters.Margin = new System.Windows.Forms.Padding(4);
             this.grParameters.Name = "grParameters";
             this.grParameters.Padding = new System.Windows.Forms.Padding(4);
-            this.grParameters.Size = new System.Drawing.Size(390, 136);
+            this.grParameters.Size = new System.Drawing.Size(390, 121);
             this.grParameters.TabIndex = 0;
             this.grParameters.TabStop = false;
             this.grParameters.Text = "Параметры";
             // 
-            // numericUpDown1
+            // ExpNumCount
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(216, 82);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.ExpNumCount.Location = new System.Drawing.Point(216, 82);
+            this.ExpNumCount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(150, 22);
-            this.numericUpDown1.TabIndex = 5;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.ExpNumCount.Name = "ExpNumCount";
+            this.ExpNumCount.Size = new System.Drawing.Size(150, 22);
+            this.ExpNumCount.TabIndex = 5;
+            this.ExpNumCount.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.ExpNumCount.ValueChanged += new System.EventHandler(this.ExpNumCount_ValueChanged);
             // 
             // lbCounter
             // 
@@ -127,35 +126,14 @@ namespace LeastSquareMethodApp
             // 
             // grExpData
             // 
-            this.grExpData.Controls.Add(this.dataY);
             this.grExpData.Controls.Add(this.dataX);
             this.grExpData.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.grExpData.Location = new System.Drawing.Point(27, 265);
+            this.grExpData.Location = new System.Drawing.Point(27, 218);
             this.grExpData.Name = "grExpData";
             this.grExpData.Size = new System.Drawing.Size(390, 184);
             this.grExpData.TabIndex = 1;
             this.grExpData.TabStop = false;
             this.grExpData.Text = "Данные эксперимента";
-            // 
-            // dataY
-            // 
-            this.dataY.AllowUserToAddRows = false;
-            this.dataY.AllowUserToDeleteRows = false;
-            this.dataY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Yi});
-            this.dataY.Location = new System.Drawing.Point(6, 112);
-            this.dataY.Name = "dataY";
-            this.dataY.Size = new System.Drawing.Size(378, 57);
-            this.dataY.TabIndex = 1;
-            // 
-            // Yi
-            // 
-            this.Yi.Frozen = true;
-            this.Yi.HeaderText = "Yi";
-            this.Yi.Name = "Yi";
-            this.Yi.ToolTipText = "i-е значение";
-            this.Yi.Width = 25;
             // 
             // dataX
             // 
@@ -163,34 +141,26 @@ namespace LeastSquareMethodApp
             this.dataX.AllowUserToDeleteRows = false;
             this.dataX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Xi});
+            this.ExpNum});
             this.dataX.Location = new System.Drawing.Point(6, 31);
             this.dataX.Name = "dataX";
-            this.dataX.Size = new System.Drawing.Size(378, 57);
+            this.dataX.Size = new System.Drawing.Size(378, 78);
             this.dataX.TabIndex = 0;
-            // 
-            // Xi
-            // 
-            this.Xi.Frozen = true;
-            this.Xi.HeaderText = "Xi";
-            this.Xi.Name = "Xi";
-            this.Xi.ToolTipText = "i-е значение";
-            this.Xi.Width = 25;
             // 
             // ChartOfFunction
             // 
             this.ChartOfFunction.BorderlineColor = System.Drawing.Color.WhiteSmoke;
-            chartArea1.Name = "ChartArea1";
-            this.ChartOfFunction.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ChartOfFunction.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.ChartOfFunction.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.ChartOfFunction.Legends.Add(legend3);
             this.ChartOfFunction.Location = new System.Drawing.Point(445, 26);
             this.ChartOfFunction.Name = "ChartOfFunction";
             this.ChartOfFunction.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ChartOfFunction.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.ChartOfFunction.Series.Add(series3);
             this.ChartOfFunction.Size = new System.Drawing.Size(379, 327);
             this.ChartOfFunction.TabIndex = 2;
             this.ChartOfFunction.Text = "chart1";
@@ -201,7 +171,7 @@ namespace LeastSquareMethodApp
             this.grMode.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.grMode.Location = new System.Drawing.Point(27, 26);
             this.grMode.Name = "grMode";
-            this.grMode.Size = new System.Drawing.Size(390, 66);
+            this.grMode.Size = new System.Drawing.Size(390, 57);
             this.grMode.TabIndex = 3;
             this.grMode.TabStop = false;
             this.grMode.Text = "Режимы";
@@ -273,11 +243,33 @@ namespace LeastSquareMethodApp
             this.textBox1.Size = new System.Drawing.Size(293, 22);
             this.textBox1.TabIndex = 1;
             // 
+            // btnSolution
+            // 
+            this.btnSolution.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSolution.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSolution.Location = new System.Drawing.Point(112, 417);
+            this.btnSolution.Name = "btnSolution";
+            this.btnSolution.Size = new System.Drawing.Size(204, 23);
+            this.btnSolution.TabIndex = 5;
+            this.btnSolution.Text = "Провести аппроксимацию";
+            this.btnSolution.UseVisualStyleBackColor = false;
+            this.btnSolution.Click += new System.EventHandler(this.btnSolution_Click);
+            // 
+            // ExpNum
+            // 
+            this.ExpNum.Frozen = true;
+            this.ExpNum.HeaderText = "i";
+            this.ExpNum.Name = "ExpNum";
+            this.ExpNum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ExpNum.ToolTipText = "i-е значение";
+            this.ExpNum.Width = 25;
+            // 
             // frmLS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 461);
+            this.Controls.Add(this.btnSolution);
             this.Controls.Add(this.grCoff);
             this.Controls.Add(this.grMode);
             this.Controls.Add(this.ChartOfFunction);
@@ -287,11 +279,11 @@ namespace LeastSquareMethodApp
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLS";
             this.Text = "Метод наименьших квадратов";
+            this.Load += new System.EventHandler(this.frmLS_Load);
             this.grParameters.ResumeLayout(false);
             this.grParameters.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExpNumCount)).EndInit();
             this.grExpData.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartOfFunction)).EndInit();
             this.grMode.ResumeLayout(false);
@@ -307,21 +299,20 @@ namespace LeastSquareMethodApp
         private System.Windows.Forms.GroupBox grParameters;
         private System.Windows.Forms.Label lbPhi1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown ExpNumCount;
         private System.Windows.Forms.Label lbCounter;
         private System.Windows.Forms.GroupBox grExpData;
-        private System.Windows.Forms.DataGridView dataY;
         private System.Windows.Forms.DataGridView dataX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Xi;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartOfFunction;
         private System.Windows.Forms.GroupBox grMode;
         private System.Windows.Forms.RadioButton rbModeDefine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Yi;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox grCoff;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbA;
+        private System.Windows.Forms.Button btnSolution;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExpNum;
     }
 }
 
