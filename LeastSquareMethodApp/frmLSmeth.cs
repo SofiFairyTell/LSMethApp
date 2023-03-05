@@ -92,6 +92,10 @@ namespace LeastSquareMethodApp
 
             // Создаем новую область Chart
             ChartArea chartArea1 = new ChartArea();
+            if (ChartOfFunction.ChartAreas.Count > 0)
+            {
+                ChartOfFunction.ChartAreas.Clear();
+            };
             ChartOfFunction.ChartAreas.Add(chartArea1);
             
             // Создаем новый объект Series для хранения точек графика
@@ -102,7 +106,7 @@ namespace LeastSquareMethodApp
             series1.Color = Color.Red;
             series2.Color = Color.Blue;
             series1.LegendText = "Эксперименты";
-            series1.LegendText = "Результаты аппроксимации";
+            series2.LegendText = "Результаты аппроксимации";
             // Добавляем точки в Series
             for (int i = 0; i < X.Length; i++)
             {
