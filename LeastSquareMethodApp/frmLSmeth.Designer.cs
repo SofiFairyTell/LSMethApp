@@ -29,9 +29,9 @@ namespace LeastSquareMethodApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.grParameters = new System.Windows.Forms.GroupBox();
             this.ExpNumCount = new System.Windows.Forms.NumericUpDown();
             this.lbCounter = new System.Windows.Forms.Label();
@@ -42,8 +42,8 @@ namespace LeastSquareMethodApp
             this.ChartOfFunction = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grMode = new System.Windows.Forms.GroupBox();
             this.rbModeDefine = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbPhi1 = new System.Windows.Forms.ComboBox();
+            this.cbPhi2 = new System.Windows.Forms.ComboBox();
             this.grCoff = new System.Windows.Forms.GroupBox();
             this.lbA = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -60,8 +60,8 @@ namespace LeastSquareMethodApp
             // 
             // grParameters
             // 
-            this.grParameters.Controls.Add(this.comboBox2);
-            this.grParameters.Controls.Add(this.comboBox1);
+            this.grParameters.Controls.Add(this.cbPhi2);
+            this.grParameters.Controls.Add(this.cbPhi1);
             this.grParameters.Controls.Add(this.ExpNumCount);
             this.grParameters.Controls.Add(this.lbCounter);
             this.grParameters.Controls.Add(this.label1);
@@ -150,17 +150,17 @@ namespace LeastSquareMethodApp
             // ChartOfFunction
             // 
             this.ChartOfFunction.BorderlineColor = System.Drawing.Color.WhiteSmoke;
-            chartArea3.Name = "ChartArea1";
-            this.ChartOfFunction.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.ChartOfFunction.Legends.Add(legend3);
+            chartArea2.Name = "ChartArea1";
+            this.ChartOfFunction.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.ChartOfFunction.Legends.Add(legend2);
             this.ChartOfFunction.Location = new System.Drawing.Point(445, 26);
             this.ChartOfFunction.Name = "ChartOfFunction";
             this.ChartOfFunction.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.ChartOfFunction.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.ChartOfFunction.Series.Add(series2);
             this.ChartOfFunction.Size = new System.Drawing.Size(379, 327);
             this.ChartOfFunction.TabIndex = 2;
             this.ChartOfFunction.Text = "chart1";
@@ -188,32 +188,32 @@ namespace LeastSquareMethodApp
             this.rbModeDefine.UseCompatibleTextRendering = true;
             this.rbModeDefine.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbPhi1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbPhi1.FormattingEnabled = true;
+            this.cbPhi1.Items.AddRange(new object[] {
             "√x",
             "x^2",
             "x",
             "sin ⁡x"});
-            this.comboBox1.Location = new System.Drawing.Point(76, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 6;
+            this.cbPhi1.Location = new System.Drawing.Point(76, 42);
+            this.cbPhi1.Name = "cbPhi1";
+            this.cbPhi1.Size = new System.Drawing.Size(121, 24);
+            this.cbPhi1.TabIndex = 6;
             // 
-            // comboBox2
+            // cbPhi2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbPhi2.FormattingEnabled = true;
+            this.cbPhi2.Items.AddRange(new object[] {
             "ln⁡x",
             "cos⁡x",
             "1/x",
             "x",
             "x^2"});
-            this.comboBox2.Location = new System.Drawing.Point(76, 81);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 7;
+            this.cbPhi2.Location = new System.Drawing.Point(76, 81);
+            this.cbPhi2.Name = "cbPhi2";
+            this.cbPhi2.Size = new System.Drawing.Size(121, 24);
+            this.cbPhi2.TabIndex = 7;
             // 
             // grCoff
             // 
@@ -306,8 +306,8 @@ namespace LeastSquareMethodApp
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartOfFunction;
         private System.Windows.Forms.GroupBox grMode;
         private System.Windows.Forms.RadioButton rbModeDefine;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPhi2;
+        private System.Windows.Forms.ComboBox cbPhi1;
         private System.Windows.Forms.GroupBox grCoff;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbA;
