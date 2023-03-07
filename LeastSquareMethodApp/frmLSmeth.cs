@@ -79,6 +79,7 @@ namespace LeastSquareMethodApp
             string ResultA = String.Concat(a0.ToString(),";", a1.ToString(), ";", a2.ToString()) ;
             tbCoff.Clear();
             tbCoff.AppendText(ResultA);
+            lnResult.Text = "y = " + a0.ToString() + a1.ToString() + "*" + "ф_1(x)" + a2.ToString() + "*" + "ф_2(x)";
             DrawChart(arrX, arrY, appY);
         }
 
@@ -102,7 +103,7 @@ namespace LeastSquareMethodApp
             Series series1 = new Series();
             Series series2 = new Series();
             series1.ChartType = SeriesChartType.Point;          
-            series2.ChartType = SeriesChartType.Point;
+            series2.ChartType = SeriesChartType.Line;
             series1.Color = Color.Red;
             series2.Color = Color.Blue;
             series1.LegendText = "Эксперименты";

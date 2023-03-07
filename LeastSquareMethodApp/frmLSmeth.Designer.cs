@@ -29,9 +29,9 @@ namespace LeastSquareMethodApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.grParameters = new System.Windows.Forms.GroupBox();
             this.cbPhi2 = new System.Windows.Forms.ComboBox();
             this.cbPhi1 = new System.Windows.Forms.ComboBox();
@@ -49,6 +49,7 @@ namespace LeastSquareMethodApp
             this.tbCoff = new System.Windows.Forms.TextBox();
             this.lbA = new System.Windows.Forms.Label();
             this.btnSolution = new System.Windows.Forms.Button();
+            this.lnResult = new System.Windows.Forms.Label();
             this.grParameters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExpNumCount)).BeginInit();
             this.grExpData.SuspendLayout();
@@ -186,19 +187,19 @@ namespace LeastSquareMethodApp
             // ChartOfFunction
             // 
             this.ChartOfFunction.BorderlineColor = System.Drawing.SystemColors.Window;
-            chartArea1.Name = "ChartArea1";
-            this.ChartOfFunction.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ChartOfFunction.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.ChartOfFunction.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.ChartOfFunction.Legends.Add(legend2);
             this.ChartOfFunction.Location = new System.Drawing.Point(445, 26);
             this.ChartOfFunction.Name = "ChartOfFunction";
             this.ChartOfFunction.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             this.ChartOfFunction.Size = new System.Drawing.Size(380, 330);
             this.ChartOfFunction.TabIndex = 2;
             this.ChartOfFunction.Text = "График ";
-            title1.Name = "titleOfChart";
-            title1.Text = "Аппроксимация функции МНК";
-            this.ChartOfFunction.Titles.Add(title1);
+            title2.Name = "titleOfChart";
+            title2.Text = "Аппроксимация функции МНК";
+            this.ChartOfFunction.Titles.Add(title2);
             // 
             // grMode
             // 
@@ -230,14 +231,14 @@ namespace LeastSquareMethodApp
             this.grCoff.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.grCoff.Location = new System.Drawing.Point(445, 377);
             this.grCoff.Name = "grCoff";
-            this.grCoff.Size = new System.Drawing.Size(379, 72);
+            this.grCoff.Size = new System.Drawing.Size(379, 51);
             this.grCoff.TabIndex = 4;
             this.grCoff.TabStop = false;
             this.grCoff.Text = "Коэффициенты";
             // 
             // tbCoff
             // 
-            this.tbCoff.Location = new System.Drawing.Point(80, 41);
+            this.tbCoff.Location = new System.Drawing.Point(80, 21);
             this.tbCoff.Name = "tbCoff";
             this.tbCoff.Size = new System.Drawing.Size(293, 22);
             this.tbCoff.TabIndex = 1;
@@ -245,7 +246,7 @@ namespace LeastSquareMethodApp
             // lbA
             // 
             this.lbA.AutoSize = true;
-            this.lbA.Location = new System.Drawing.Point(6, 41);
+            this.lbA.Location = new System.Drawing.Point(6, 18);
             this.lbA.Name = "lbA";
             this.lbA.Size = new System.Drawing.Size(67, 16);
             this.lbA.TabIndex = 0;
@@ -263,11 +264,21 @@ namespace LeastSquareMethodApp
             this.btnSolution.UseVisualStyleBackColor = false;
             this.btnSolution.Click += new System.EventHandler(this.btnSolution_Click);
             // 
+            // lnResult
+            // 
+            this.lnResult.AutoSize = true;
+            this.lnResult.Location = new System.Drawing.Point(445, 435);
+            this.lnResult.Name = "lnResult";
+            this.lnResult.Size = new System.Drawing.Size(88, 18);
+            this.lnResult.TabIndex = 6;
+            this.lnResult.Text = "Результат:";
+            // 
             // frmLS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 461);
+            this.Controls.Add(this.lnResult);
             this.Controls.Add(this.btnSolution);
             this.Controls.Add(this.grCoff);
             this.Controls.Add(this.grMode);
@@ -290,6 +301,7 @@ namespace LeastSquareMethodApp
             this.grCoff.ResumeLayout(false);
             this.grCoff.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -312,6 +324,7 @@ namespace LeastSquareMethodApp
         private System.Windows.Forms.Button btnSolution;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExpNum;
         public System.Windows.Forms.DataVisualization.Charting.Chart ChartOfFunction;
+        public System.Windows.Forms.Label lnResult;
     }
 }
 
